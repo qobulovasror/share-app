@@ -1,0 +1,42 @@
+.card {
+    width: 40%;
+    height: max-content;
+    padding: 15px 25px;
+    margin: 50px auto;
+    border-radius: 10px;
+    border: 1px solid #000;
+    box-shadow: 0 0 4px 0;
+}
+
+h3 {
+    margin-left: 10px;
+}
+
+input {
+    width: 100%;
+    height: max-content;
+    padding: 10px 15px;
+    border: 0px solid #000;
+    border-radius: 25px;
+    margin: 5px 0 10px 0;
+    box-shadow: 0 0 3px 0;
+    outline: none;
+    background: linear-gradient(90deg, rgba(0, 0, 255, 0.712), rgba(255, 0, 0, 0.616));
+    color: #fff;
+    font-size: 20px;
+}
+input::placeholder {
+    color: #fff;
+}
+
+button {
+    width: max-content;
+    height: max-content;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 0px solid #000;
+    box-shadow: 0 0 5px 0;
+    background: linear-gradient(90deg, rgba(0, 0, 255, 0.712), rgba(255, 0, 0, 0.616));
+    color: #fff;
+    margin: 5px 5px 0 5px;
+}

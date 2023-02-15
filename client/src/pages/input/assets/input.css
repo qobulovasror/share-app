@@ -1,0 +1,405 @@
+.set.header {
+    width: 100%;
+    height: max-content;
+    padding: 10px 0;
+    border: 0px solid #000;
+    box-shadow: 0 0 4px 0;
+}
+.header .logo {
+    font-size: 26px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.profil {
+    width: max-content;
+    height: max-content;
+    padding: 10px 15px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    background-color: blue;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.card {
+    width: 60%;
+    height: max-content;
+    max-height: 525px;
+    padding: 15px 20px;
+    margin: 15px auto;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0;
+}
+
+.card .createDate {
+    position: absolute;
+    font-size: 12px;
+    margin: 8px 0 -8px 0;
+    top: 55%;
+    left: 3%;
+    display: none;
+}
+
+.add {
+    width: 100%;
+    height: max-content;
+    padding: 10px 0;
+    margin: 10px 0;
+    border-radius: 20px;
+    box-shadow: 0 0 4px 0;
+    background: linear-gradient(90deg, rgba(0, 0, 255, 0.712), rgba(255, 0, 0, 0.616));
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+}
+
+.selectType {
+    width: 100%;
+    height: max-content;
+    padding: 10px 5px;
+}
+
+.selectType li {
+    margin: 0 5px;
+    cursor: pointer;
+    padding: 10px;
+    /* border-radius: 10px; */
+}
+.selectType li.active {
+    background-color: rgb(167, 167, 194);
+    border-bottom: 1px solid #000;
+}
+
+.list {
+    width: 100%;
+    height: max-content;
+    max-height: 303px;
+    padding: 10px;
+    overflow-x: auto;
+    box-shadow: inset 0 0 4px 0;
+    border-radius: 10px;
+}
+.list li {
+    width: 100%;
+    height: max-content;
+    border: 0px solid #000;
+    box-shadow: 0 0 5px 0;
+    border-radius: 10px;
+    padding: 18px 15px;
+    margin: 5px 0;
+    cursor: pointer;
+    position: relative;
+}
+
+.addWin {
+    /* display: none; */
+    width: 55%;
+    height: max-content;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(255, 255, 255);
+    transition: 0.5s top;
+    z-index: 6;
+}
+.addWin label {
+    margin-left: 10px;
+    font-size: 20px;
+}
+.addWin input {
+    width: 100%;
+    height: max-content;
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0 0 4px 0;
+    margin: 10px 0;
+}
+.addWin .cancel {
+    position: absolute;
+    top: 0%;
+    right: 0;
+    padding: 8px 15px;
+}
+.addWin .createBtn .inputMaxLeng {
+    padding: 10px;
+} 
+
+.addWin button {
+    width: max-content;
+    height: max-content;
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 30px;
+    border: 0px solid #000;
+    background: #0ab10a;
+    color: #fff;
+    cursor: pointer;
+}
+.card .colAction {
+    margin-top: 10px;
+}
+.card .colAction .actionBtn {
+    width: max-content;
+    height: max-content;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 20px;
+    box-shadow: 0 0 5px 0;
+    border: none;
+    cursor: pointer;
+}
+.addItemBtn {
+    width: 100%;
+    height: max-content;
+    padding: 10px 15px;
+    margin: 10px 5px;
+    border-radius: 20px;
+    box-shadow: 0 0 5px 0;
+    border: none;
+    cursor: pointer;
+}
+
+
+.actionWin {
+    /* display: none; */
+    width: 65%;
+    height: max-content;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(255, 255, 255);
+    transition: 0.5s top;
+}
+.actionWin ul {
+    margin: 10px 0;
+}
+.actionWin li {
+    padding: 10px 15px;
+}
+.actionWin .cancel {
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 4px 0;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: #fff;
+    cursor: pointer;
+}
+.actionWin input {
+    padding: 7px 15px;
+    font-size: 16px;
+    margin: 10px auto;
+}
+.actionWin .colAction .actionBtn {
+    width: max-content;
+    height: max-content;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 20px;
+    box-shadow: 0 0 5px 0;
+    border: none;
+    cursor: pointer;
+}
+.list .actionBtn button {
+    padding: 4px 12px;
+    margin-left: 4px;
+}
+
+.addItemWin {
+    display: none;
+    width: 50%;
+    height: max-content;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #000;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+}
+.addItemWin label[for="toCollection"] select{
+    width: 100%;
+    height: max-content;
+    padding: 8px;
+    margin: 10px auto;
+    border-radius: 10px;
+    border: 1px solid #000;
+}
+.addItemWin #col option{
+    padding: 15px;
+}
+.addItemWin input[type="radio"] {
+    width: max-content;
+    height: max-content;
+    padding: 0;
+    border-radius: 0;
+    border: none;
+    box-shadow: 0 0 0 0;
+    margin-left: 5px;
+}
+.addItemWin .itemType {
+    width: 100%;
+    height: max-content;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #000;
+    margin-left: 0 auto;
+}
+.addItemWin ul.itemBody {
+    width: 100%;
+    height: max-content;
+    padding: 15px;
+    border-radius: 10px;
+    margin-left: 0 auto;
+    box-shadow: inset 0 0 4px 0;
+    margin-top: 10px;
+}
+.addItemWin .tags {
+    width: 100%;
+    height: max-content;
+    padding: 0 15px;
+    margin-left: 0 auto;
+    margin-top: 5px;
+}
+.addItemWin .tags li {
+    list-style: '#';
+    margin-right: 20px;
+}
+.addItemWin .itemBody textarea {
+    width: 100%;
+    height: max-content;
+    border-radius: 10px;
+    border: 0px solid #000;
+    padding: 10px;
+    box-shadow: 0 0 4px 0;
+    font-size: 18px;
+    font-family: sans-serif;
+    margin-top: 5px;
+}
+.itemBody .typeLink, 
+.itemBody .typeText {
+    display: none;
+} 
+
+.itemView {
+    display: none;
+    width: 50%;
+    height: max-content;
+    padding: 20px;
+    border-radius: 10px;
+    border: 0px solid #000;
+    box-shadow: 0 0 4px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+}
+.btnDownload {
+    width: 100%;
+    height: max-content;
+    padding: 8px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 0 3px;
+    margin: 10px 0;
+}
+.descrip {
+    width: 100%;
+    height: max-content;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid #000;
+}
+.itemView .tags {
+    width: 100%;
+    height: max-content;
+    padding: 0 15px;
+    margin-left: 0 auto;
+    margin-top: 5px;
+} 
+.itemView .tags li {
+    list-style: '#';
+    margin-right: 20px;
+} 
+label[for="linkView"] {
+    position: relative;
+}
+#linkViewCopy {
+    width: max-content;
+    height: max-content;
+    position: relative;
+    padding: 10px;
+    border-radius: 10px;
+    border: 0px;
+    box-shadow: 0 0 3px 0;
+    top: 12px;
+    margin: 0 5px;
+    background: #23a123;
+    color: #fff;
+}
+label[for="TextView"] {
+    position: relative;
+}
+.typeTextView #TextView {
+    width: 100%;
+    height: max-content;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 3px;
+    margin: 10px 0;
+    letter-spacing: 0;
+}
+
+.typeTextView #TextViewCopy {
+    width: max-content;
+    height: max-content;
+    padding: 6px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 3px;
+    position: absolute;
+    right: 1%;
+    background: #1ab11a;
+    color: #fff;
+    margin: 14px 0px;
+}
+#TextViewCopy{
+    position: absolute;
+}
+
+.viewKey {
+    display: none;
+    width: 50%;
+    height: max-content;
+    padding: 20px;
+    border-radius: 10px;
+    border: 0px solid #000;
+    box-shadow: 0 0 4px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+}

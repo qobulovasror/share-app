@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share likn & file</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/col.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header row between">
+                <div class="logo">
+                    <i class='bx bxs-share-alt'>Share</i>
+                </div>
+                <div class="row">
+                    <div class="setting"><i class='bx bxs-brightness'></i></div>
+                    <!-- <div class="joing"><i class='bx bx-log-in-circle'></i></div> -->
+                    <div class="joing"><i class='bx bx-plus'></i></div>
+                </div>
+            </div>
+            <div class="search">
+                <input type="search" name="search" id="search" placeholder="Search ...">
+            </div>
+            <div class="category row between">
+                <ul class="row">
+                    <li>
+                        <input checked type="radio" name="searchType" id="all">
+                        <label for="all">All</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="searchType" id="file">
+                        <label for="file">file</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="searchType" id="link">
+                        <label for="link">link</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="searchType" id="text">
+                        <label for="text">text</label>
+                    </li>
+                </ul>
+                <button class="btn">Advanced</button>
+            </div>
+            <div class="advancet">
+                <form class="advancetSearch">
+                    <div class="row between">
+                        <span>Advanced Search</span>
+                        <div class="cancel btn">x</div>
+                    </div>
+                    <div class="column">
+                        <label for="name" class="column">
+                            Username
+                            <input type="text" name="name" id="name" placeholder="username">
+                        </label>
+                        <label for="hasteg" class="column">
+                            #hashteg
+                            <input name="hasteg" id="hasteg"/>
+                        </label>
+                        <ul class="tags row wrap">
+                            <li>#hash</li>
+                        </ul>
+                    </div>
+                    <div class="advFooter row between">
+                        <span>result</span>
+                        <div class="row">
+                            <button type="reset" class="btn">Reset</button>
+                            <button class="resarch" class="btn">Research</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <ul class="result">
+                <li class="t-center">No data</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

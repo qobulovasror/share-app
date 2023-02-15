@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/col.css">
+    <link rel="stylesheet" href="css/input.css">
+    <title>input share</title>
+</head> 
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="row between">
+                <h2 class="logo">Share</h2>
+                <div class="profil">A</div>
+            </div>
+        </div>
+    </div>
+    <div class="addWin">
+        <h3 class="t-center">New Collection</h3>
+        <div class="column">
+            <label for="collName">Name</label>
+            <input type="text" placeholder="collection name" id="collName">
+        </div>
+        <div class="create-btn">
+            <button>Create</button>
+        </div>
+    </div>
+    <div class="card">
+        <h2 class="t-center">Your Collections</h2>
+        <div class="add">
+            <div class="t-center">Add collection</div>
+        </div>
+        <ul class="selectType row">
+            <li class="active">All</li>
+            <li>link</li>
+            <li>file</li>
+            <li>text</li>
+        </ul>
+        <ul class="list column">
+            <li class="row between">
+                <span class="itemName">item</span>
+                <div class="actionBtn">
+                    <span>count: 5 </span>
+                    <button>add</button>
+                    <button>edit</button>
+                    <button>delet</button>
+                </div>
+            </li>
+            <li class="row between">
+                <span class="itemName">item</span>
+                <div class="actionBtn">
+                    <span>count: 15 </span>
+                    <button>add</button>
+                    <button>edit</button>
+                    <button>delet</button>
+                </div>
+            </li>
+        </ul>
+        <div class="colAction">
+            <div class="row between">
+                <span>Count: 10</span>
+                <button class="actionBtn">Clear all</button>
+            </div>
+        </div>
+    </div>
+    <div class="actionWin">
+        <h3 class="t-center">Colliction Name</h3>
+        <div class="column">
+            <!-- <label for="addItem">Add Item</label>
+            <input type="text" placeholder="Add Item" id="addItem"> -->
+            <button class="addItemBtn">Add</button>
+        </div>
+        <ul class="list">
+            <li class="row between">
+                <span class="itemName">item</span>
+                <div class="actionBtn">
+                    <button>edit</button>
+                    <button>delet</button>
+                </div>
+            </li>
+        </ul>
+        <div class="colAction">
+            <div class="row between">
+                <!-- <button class="actionBtn">Add</button> -->
+                <span>Count: 10</span>
+                <div class="row">
+                    <button class="actionBtn">Delete collection</button>
+                    <button class="actionBtn">Clear all</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="addItemWin">
+        <h3 class="t-center">Add item to collection</h3>
+        <label for="toCollection">
+            <select name="col" id="col">
+                <option selected value="">col 1</option>
+                <option value="">col 2</option>
+                <option value="">col 3</option>
+            </select>
+        </label>
+        <ul class="itemType row">
+            <li>
+                <input checked type="radio" name="searchType" id="file">
+                <label for="file">file</label>
+            </li>
+            <li>
+                <input type="radio" name="searchType" id="link">
+                <label for="link">link</label>
+            </li>
+            <li>
+                <input type="radio" name="searchType" id="text">
+                <label for="text">text</label>
+            </li>
+        </ul>
+        <ul class="itemBody">
+            <li class="typeFile">
+                <label for="nameFile">Name</label>
+                <input type="text" name="nameFile" id="nameFile">
+                <label for="file">File</label>
+                <input type="file" placeholder="file" id="file" value="file">
+                <label for="tagsFile">#tags</label>
+                <input type="text" name="tagsFile" id="tagsFile">
+                <label for="desFile">description</label>
+                <textarea id="desFile" cols="30" rows="2"></textarea>
+                <label for="keyFile">key</label>
+                <input type="text" id="keyFile">
+                <ul class="tags row wrap">
+                    <li>none</li>
+                </ul>
+            </li>
+            <li class="typeLink">
+                <label for="nameLink">Name</label>
+                <input type="text" name="nameLink" id="nameLink" placeholder="name">
+                <label for="link">Link</label>
+                <input type="text" placeholder="link" id="link">
+                <label for="tagsLink">#tags</label>
+                <input type="text"id="tagsLink" placeholder="tags">
+                <label for="desLink">description</label>
+                <textarea id="desLink" cols="30" rows="2"></textarea>
+                <label for="keyLink">key</label>
+                <input type="text" id="keyLink">
+                <ul class="tags row wrap">
+                    <li>none</li>
+                </ul>
+            </li>
+            <li class="typeText">
+                <label for="nameText">Name</label>
+                <input type="text" name="nameText" id="nameText" placeholder="name">
+                <label for="textText">Text</label>
+                <textarea id="textText" cols="30" rows="5" placeholder="text"></textarea>
+                <input type="text" name="tagsText" id="tagsText" placeholder="tags">
+                <label for="desText">description</label>
+                <textarea id="desText" cols="30" rows="2"></textarea>
+                <label for="keyText">key</label>
+                <input type="text" id="keyText">
+                <label for="tagsText">#tags</label>
+                <ul class="tags row wrap">
+                    <li>none</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="itemView">
+        <h3 class="t-center">Item name</h3>
+        <ul>
+            <li class="typeFileView">
+                <button class="btnDownload">Download</button>
+                <div class="column">
+                    <span>Description</span>
+                    <p class="descrip">description</p>
+                </div>
+                <ul class="tags row wrap">
+                    <li>none</li>
+                </ul>
+            </li>
+            <!-- <li class="typeLinkView">
+                <label for="linkView" class="row">
+                    <input type="text" id="linkView" disabled value="65465">
+                    <button id="linkViewCopy">Copy</button>
+                </label>
+                <div class="column">
+                    <span>Description</span>
+                    <p class="descrip">description</p>
+                </div>
+                <ul class="tags row wrap">
+                    <li>none</li>
+                </ul>
+            </li> -->
+            <!-- <li class="typeTextView">
+                <label for="TextView">
+                    <textarea id="TextView" cols="30" rows="5" disabled>dfgdfg</textarea>
+                    <button id="TextViewCopy">Copy</button>
+                </label>
+                <div class="column">
+                    <span>Description</span>
+                    <p class="descrip">description</p>
+                </div>
+                <ul class="tags row wrap">
+                    <li>none</li>
+                </ul>
+            </li> -->
+        </ul>
+    </div>
+    <div class="viewKey">
+        <h3 class="t-center">Enter Key</h3>
+        <input type="text" placeholder="key">
+    </div>
+</body>
+</html>
