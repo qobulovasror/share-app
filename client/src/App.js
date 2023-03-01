@@ -3,6 +3,7 @@ import { Suspense, lazy } from 'react';
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom';
 
 import './assets/app.css';
+import Loading from './pages/load/loading';
 
 const Input = lazy(()=>import("./pages/input/input"));
 const Output = lazy(()=>import("./pages/output/output"));
@@ -13,17 +14,18 @@ function App() {
   const [authToken, setAuthToken] = useState(window.localStorage.getItem("authToken")); 
   return (
     <>
-      <Suspense fallback={<>Loading...</>}>
+      <Suspense fallback={<Loading/>}>
         <BrowserRouter>
           <Routes>
             <Route path='/' element={<Main/>}/>
             <Route path='/input' element={
-              (!authToken)? <Input/> 
-              : <Login setAuthToken={setAuthToken}/>
+              (authToken)? <Input setAuthToken={setAuthToken}/> 
+              : <Login setAuthToken={setAuthToken} />
             }/>
             <Route path='/output' element={<Output/>}/>
-            <Route path='/login' element={<Login/>}/>
-            <Route path='/regis' element={<Regis/>}/>
+            <Route path='/login' element={<Login setAuthToken={setAuthToken}/>}/>
+            <Route path='/regis' element={<Regis setAuthToken={setAuthToken}/>}/>
+            {/* <Route path='/animate' element={<Loading/>}/> */}
           </Routes>
         </BrowserRouter>
       </Suspense>

@@ -1,0 +1,6 @@
+1.itemView itemlar ko'rinishi
+    1.item ko'rishda yanngi oyona ochish
+    2.key so'rash
+    3.key to'g'ri bo'la oynaga ochish
+2.deleteItem itemlarni o'chirissh
+3.addItemToCol item qo'shish

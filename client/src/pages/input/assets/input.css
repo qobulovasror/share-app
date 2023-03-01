@@ -18,12 +18,28 @@
     width: max-content;
     height: max-content;
     padding: 10px 15px;
-    border-radius: 50%;
-    border: 1px solid #000;
-    background-color: blue;
-    color: #fff;
+    color: #000;
     font-weight: bold;
     cursor: pointer;
+    position: relative;
+}
+.profil button{
+    width: max-content;
+    height: max-content;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #00f;
+    border: 0px solid #000;
+    box-shadow: 0 0 5px 0;
+    position: absolute;
+    color: #fff;
+    top: 80%;
+    right: 0;
+    display: none;
+}
+.profil:hover button{
+    display: block;
 }
 
 .card {
@@ -402,4 +418,14 @@ label[for="TextView"] {
     left: 50%;
     transform: translateX(-50%);
     background-color: #fff;
+}
+
+button.btn-danger {
+    border-radius: 10px;
+    border: 0px;
+    background-color: #f00;
+    color: #fff;
+}
+button {
+    cursor: pointer;
 }

@@ -1,0 +1,53 @@
+.card-login, .card-regs {
+    width: 35%;
+    height: max-content;
+    position: relative;
+    top: 30%;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 15px;
+    border-radius: 15px;
+    border: 0px solid #000;
+    background-color: #eeeeee;
+    box-shadow: 0 0 4px 0;
+}
+form h2 {
+    text-align: center;
+    margin: 10px 0;    
+    font-size: 30px;
+}
+label {
+    width: 100%;
+}
+h3 {
+    margin-top: 5px;
+    font-size: 20px;
+}
+input, button {
+    width: 100%;
+    height: max-content;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid #000;
+    font-size: 20px;
+}
+button {
+    margin: 10px 0;
+    background-color: #00f;
+    color: #fff;
+    cursor: pointer;
+}
+span {
+    font-size: 18px;
+}
+
+@media screen and (max-width: 867px) {
+    .card-login, .card-regs {
+        width: 50%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .card-login, .card-regs {
+        width: 90%;
+    }
+}
