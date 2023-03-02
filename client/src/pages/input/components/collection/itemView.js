@@ -56,4 +56,11 @@ function ItemView(props) {
   );
 }
 
+const Text = ()=>{
+  return(
+    <>
+      
+    </>
+  ) 
+}
 export default ItemView;
