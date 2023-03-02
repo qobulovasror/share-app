@@ -1,6 +1,7 @@
 // import AddItemWin from './additemWin';
+import { useState } from "react";
+import ItemLoad from "../../../load/itemLoad";
 import ItemView from "./itemView";
-import ViewKey from "./viewKey";
 function ActionWin(props) {
   const {
     activeWin, 
@@ -9,44 +10,52 @@ function ActionWin(props) {
     dataItems,
     setDataItems
   } = props;
-  const itemView = (id, item)=>{
-
+  const [selectItem, setSelectIem] = useState("");
+  const itemView = (item)=>{
+    setSelectIem(item);
   }
-  const deleteItem = ()=>{  }
+  const deleteItem = ()=>{ }
   const addItemToCol = ()=>{ }
   return (
     <>
       {
         (activeWin.ActionWin)? <>
           <div className="actionWin">
-            {/* <AddItemWin/>  */}
-             <ViewKey/>
-             <ItemView/>
+             <ItemView
+                selectItem={selectItem}
+                setSelectIem={setSelectIem}
+             />
             <h3 className="t-center">{openItemId.name}</h3>
             <button className="cancel" onClick={()=>{
               setActiveWin({...activeWin, ActionWin: false})
               setDataItems([]);
               }}>x</button>
             <div className="column">
-              <button className="addItemBtn" onClick={()=>addItemToCol(openItemId.id)}>Add item to this collection</button>
+              <button 
+                className="addItemBtn" 
+                onClick={()=>addItemToCol(openItemId.id)}
+              >Add item to this collection</button>
             </div>
             <ul className="list">
               {
                 (dataItems.length>0)?  (
                 dataItems.map((item) => (
-                  <li className="row between" key={item.id} onClick={() => itemView(item.id, item)}>
-                    <span className="itemName">
+                  <li className="row between" key={item.id}>
+                    <span className="itemName" onClick={() => itemView(item)}>
                         {item?.name?.length > 30
                           ? item.name.slice(0, 20) + "..."
                           : item.name}
                     </span>
                     <div className="actionBtn">
                       <button>edit</button>
-                      <button className="btn-danger" onClick={() => deleteItem(item.id, item.name)}>delet</button>
+                      <button 
+                        className="btn-danger" 
+                        onClick={() => deleteItem(item.id, item.name)}
+                      >delet</button>
                     </div>
                   </li>
                 ))):(
-                  <li className="t-center">Loading...</li>
+                    <ItemLoad/>
                 )}
             </ul>
             <div className="colAction">

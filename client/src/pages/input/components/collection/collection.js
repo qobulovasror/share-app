@@ -4,6 +4,7 @@ import { db } from "../../../../firebase/firebase";
 import { useState } from "react";
 import ActionWin from "./actionWin";
 import { collection, getDocs } from "firebase/firestore";
+import ItemLoad from "../../../load/itemLoad";
 
 function Collection(props) {
   const { dataCols, setActiveWin, activeWin, dataLoad, fetchPost } = props;
@@ -62,7 +63,7 @@ function Collection(props) {
         <li>text</li>
       </ul>
       <ul className="list column">
-        {dataLoad && <div className="t-center">Loading...</div>}
+        {dataLoad && <ItemLoad/>}
         {dataLoad || dataCols.length > 0 ? (
           dataCols.map((item) => (
             <li className="row between" key={item.id}>

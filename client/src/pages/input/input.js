@@ -4,8 +4,6 @@ import { collection, getDocs } from "firebase/firestore";
 import {db} from '../../firebase/firebase';
 import Header from "./components/header";
 import AddColl from "./components/addColl";
-// import ActionWin from "./components/actionWin";
-// 
 import Collection from "./components/collection/collection";
 
 import './assets/input.css';

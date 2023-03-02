@@ -94,7 +94,7 @@
 
 .list {
     width: 100%;
-    height: max-content;
+    height: 310px;
     max-height: 303px;
     padding: 10px;
     overflow-x: auto;
@@ -189,14 +189,13 @@
 
 
 .actionWin {
-    /* display: none; */
     width: 65%;
     height: max-content;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 0 5px 0;
     position: absolute;
-    top: 10%;
+    top: 12%;
     left: 50%;
     transform: translateX(-50%);
     background-color: rgb(255, 255, 255);
@@ -318,7 +317,7 @@
 } 
 
 .itemView {
-    display: none;
+    /* display: none; */
     width: 50%;
     height: max-content;
     padding: 20px;
@@ -330,6 +329,7 @@
     left: 50%;
     transform: translateX(-50%);
     background-color: #fff;
+    z-index: 10;
 }
 .btnDownload {
     width: 100%;
@@ -406,7 +406,7 @@ label[for="TextView"] {
 }
 
 .viewKey {
-    display: none;
+    /* display: none; */
     width: 50%;
     height: max-content;
     padding: 20px;
@@ -418,6 +418,27 @@ label[for="TextView"] {
     left: 50%;
     transform: translateX(-50%);
     background-color: #fff;
+    z-index: 5;
+}
+.viewKey input{
+   width: 100%;
+   height: max-content;
+   padding: 10px;
+   border-radius: 15px;
+   border: 0px;
+   box-shadow: 0 0 4px 0; 
+}
+.viewKey .cancel{
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 4px 0;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: #fff;
+    cursor: pointer;
 }
 
 button.btn-danger {
