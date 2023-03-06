@@ -11,9 +11,7 @@ function Search({setResult}) {
     tags: []
   });
   const [advan, setAdvan] = useState("none");
-  const changeHandler = (e)=>{
-    setSearch({...search, text: e.target.value})
-  }
+  const changeHandler = (e)=>{ setSearch({...search, text: e.target.value}) }
 
   const request = ()=>{
     console.log("request");
