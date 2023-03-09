@@ -12,6 +12,8 @@ const Regis = lazy(()=>import("./pages/auth/regis"));
 
 function App() {
   const [authToken, setAuthToken] = useState(window.localStorage.getItem("authToken")); 
+  const [email, setEmail] = useState(); 
+
   return (
     <>
       <Suspense fallback={<Loading/>}>
@@ -19,12 +21,12 @@ function App() {
           <Routes>
             <Route path='/' element={<Main/>}/>
             <Route path='/input' element={
-              (authToken)? <Input setAuthToken={setAuthToken}/> 
-              : <Login setAuthToken={setAuthToken} />
+              (authToken)? <Input setAuthToken={setAuthToken} email={email} setEmail={setEmail}/> 
+              : <Login setAuthToken={setAuthToken} setEmail={setEmail}/>
             }/>
             <Route path='/output' element={<Output/>}/>
-            <Route path='/login' element={<Login setAuthToken={setAuthToken}/>}/>
-            <Route path='/regis' element={<Regis setAuthToken={setAuthToken}/>}/>
+            <Route path='/login' element={<Login setAuthToken={setAuthToken}  setEmail={setEmail}/>}/>
+            <Route path='/regis' element={<Regis setAuthToken={setAuthToken}  setEmail={setEmail}/>}/>
           </Routes>
         </BrowserRouter>
       </Suspense>
