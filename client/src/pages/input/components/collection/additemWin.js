@@ -4,7 +4,7 @@ import AddLink from "./addItemType/addlink";
 import AddText from "./addItemType/addText";
 
 function AddItemWin(props) {
-  const { setActiveWin, activeWin, fetchPost, userData } = props;
+  const { setActiveWin, activeWin, fetchPost, email } = props;
   const [check, setCheck] = useState(true);
   const [type, setType] = useState("link")
   const checkedHandler = (e)=>{
@@ -50,7 +50,7 @@ function AddItemWin(props) {
                     setActiveWin={setActiveWin} 
                     activeWin={activeWin}
                     fetchPost={fetchPost}
-                    userData={userData}
+                    email={email}
                   /> 
                   : 
                     <AddLink 
@@ -58,7 +58,7 @@ function AddItemWin(props) {
                       setActiveWin={setActiveWin} 
                       activeWin={activeWin}
                       fetchPost={fetchPost}
-                      userData={userData}
+                      email={email}
                       />
           }
         </ul>

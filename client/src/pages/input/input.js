@@ -73,7 +73,7 @@ function Input({setAuthToken, email, setEmail}) {
             dataLoad={dataLoad}
             setActiveWin={setActiveWin}
             activeWin={activeWin}
-            userData={userData}
+            email={email}
             />
         </div>
       </div>

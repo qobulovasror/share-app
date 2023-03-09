@@ -1,11 +1,10 @@
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../../../../firebase/firebase";
-import { ToastContainer, toast } from "react-toastify";
-
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
 function AddLink(props) {
-  const { type, setActiveWin, activeWin, fetchPost, userData } = props;
+  const { type, setActiveWin, activeWin, fetchPost, email } = props;
   const [data, setData] = useState({
     nameLink: "",
     link: "",
@@ -28,18 +27,18 @@ function AddLink(props) {
           key: data.keyLink,
           tags: data.tagsLink,
           createDate: new Date(),
-          owerId: userData.email
+          owerId: email
       });
       fetchPost();
       setActiveWin({ ...activeWin, AddItemWin: false });
       toast.success("Success 😄");
     } catch (err) {
       toast.error(err + " 🙁");
+      console.log(err);
     }
   };
   return (
     <>
-      <ToastContainer />
       <li className="typeLink">
         <form onSubmit={submitHandler}>
           <label htmlFor="nameLink">Name</label>

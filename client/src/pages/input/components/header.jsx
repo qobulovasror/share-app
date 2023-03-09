@@ -24,8 +24,6 @@ function Header({ setAuthToken, setUserData, userData }) {
     if(confirm("Are you want log out? 🤨"))
       logout()
   };
-  
-  
   return (
     <>
       <ToastContainer />

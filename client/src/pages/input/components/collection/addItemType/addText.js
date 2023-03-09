@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../../../../firebase/firebase";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 function AddText(props) {
-  const { type, setActiveWin, activeWin, fetchPost, userData } = props;
+  const { type, setActiveWin, activeWin, fetchPost, email } = props;
   const [data, setData] = useState({
     nameText: "",
     text: "",
@@ -28,7 +28,7 @@ function AddText(props) {
           key: data.keyText,
           tags: data.tagsText,
           createDate: new Date(),
-          owerId: userData.email
+          owerId: email
       });
       fetchPost();
       setActiveWin({ ...activeWin, AddItemWin: false });
@@ -39,7 +39,6 @@ function AddText(props) {
   }
   return (
     <>
-      <ToastContainer/>
       <li className="typeText">
         <form onSubmit={submitHandler}>
           <label htmlFor="nameText">Name</label>

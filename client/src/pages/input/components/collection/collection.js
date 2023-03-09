@@ -7,7 +7,7 @@ import AddItemWin from "./additemWin";
 import EditItem from "./editItem";
 
 function Collection(props) {
-  const { dataCols, setActiveWin, activeWin, dataLoad, fetchPost, userData } = props;
+  const { dataCols, setActiveWin, activeWin, dataLoad, fetchPost, email } = props;
   const [itemId, setItemId] = useState(null);
   const [filter, setFilter] = useState("all");
   const [check, setCheck] = useState(true);
@@ -49,7 +49,7 @@ function Collection(props) {
         setActiveWin={setActiveWin}
         activeWin={activeWin}
         fetchPost={fetchPost} 
-        userData={userData}
+        email={email}
       />
       <EditItem
         setActiveWin={setActiveWin}
