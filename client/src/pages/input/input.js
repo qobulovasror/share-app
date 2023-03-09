@@ -3,9 +3,7 @@ import { collection, getDocs } from "firebase/firestore";
 
 import {db} from '../../firebase/firebase';
 import Header from "./components/header";
-import AddColl from "./components/addColl";
 import Collection from "./components/collection/collection";
-
 import './assets/input.css';
 
 function Input({setAuthToken}) {
@@ -13,16 +11,14 @@ function Input({setAuthToken}) {
     const [dataCols, setDataCols] = useState([]);
     const [dataLoad, setDataLoad] = useState(true);
     const [activeWin, setActiveWin] = useState({
-      AddColl: false,
-      ActionWin: false,
+      // AddColl: false,
+      // ActionWin: false,
       AddItemWin: false,
-      ViewKey: false,
+      EditItem: false,
     });
-    const createCollView = ()=>{
-      setActiveWin({...activeWin, AddColl: true})
-    }
+    const AddItem = ()=>{ setActiveWin({...activeWin, AddItemWin: true}) }
     const fetchPost = async () => {
-      await getDocs(collection(db, "dataCols"))
+      await getDocs(collection(db, "dataItems"))
           .then((querySnapshot)=>{               
               const newData = querySnapshot.docs
                   .map((doc) => ({...doc.data(), id:doc.id }));
@@ -30,7 +26,7 @@ function Input({setAuthToken}) {
               setDataLoad(false)
           })
           .catch(err=>console.log(err))
-  }
+    }
   useEffect(()=>{
       fetchPost();
   }, [])
@@ -41,20 +37,10 @@ function Input({setAuthToken}) {
         setUserData={setUserData}
         userData={userData}
       />
-      <AddColl 
-        activeWin={activeWin} 
-        setActiveWin={setActiveWin}
-        dataCols={dataCols}
-        setDataCols={setDataCols} 
-        fetchPost={fetchPost} 
-        userData={userData}
-      />
       <div className="card get">
-        <h2 className="t-center">Your Collections</h2>
-        <div className="add" onClick={createCollView}>
-          <div className="t-center">
-            Create collection
-          </div>
+        <h2 className="t-center">Your elements</h2>
+        <div className="add" onClick={AddItem}>
+          <div className="t-center">Add new element</div>
         </div>
         <div>
           <Collection 
@@ -64,6 +50,7 @@ function Input({setAuthToken}) {
             dataLoad={dataLoad}
             setActiveWin={setActiveWin}
             activeWin={activeWin}
+            userData={userData}
             />
         </div>
       </div>

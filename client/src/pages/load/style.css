@@ -17,7 +17,7 @@
 .head1, .head2 {
 	width: 200px;
     height: 100px;
-    background: red;
+    background: #00f;
     border-radius: 100px 100px 0 0;
 	transform-origin: 50% 100%;
 	z-index: 5;
@@ -85,7 +85,7 @@
 	height: 15px;
 	border-radius: 50%;
 	margin: 0 25px;
-	background-color: blue;
+	background-color: red;
 	z-index: -4;
 }
 @keyframes eat-animat {

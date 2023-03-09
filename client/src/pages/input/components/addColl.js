@@ -31,7 +31,6 @@ function AddColl(props) {
       toast.error(err+' 🙁')
     }
   }
-   
   
   if (!activeWin.AddColl) 
     return <></>;

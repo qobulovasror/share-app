@@ -2,18 +2,26 @@ import { doc, deleteDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
 import { db } from "../../../../firebase/firebase";
 import { useState } from "react";
-import ActionWin from "./actionWin";
-import { collection, getDocs } from "firebase/firestore";
 import ItemLoad from "../../../load/itemLoad";
+import AddItemWin from "./additemWin";
+import EditItem from "./editItem";
 
 function Collection(props) {
-  const { dataCols, setActiveWin, activeWin, dataLoad, fetchPost } = props;
-  const [dataItems, setDataItems] = useState([]);
-  const [openItemId, setOpenItemId] = useState({ id: "", name: "" });
+  const { dataCols, setActiveWin, activeWin, dataLoad, fetchPost, userData } = props;
+  const [itemId, setItemId] = useState(null);
+  const [filter, setFilter] = useState("all");
+  const [check, setCheck] = useState(true);
+  const checkedHandler = (e)=>{ 
+    if(e.target.id!=='all')
+      setCheck(false);
+      else
+      setCheck(true);
+    setFilter(e.target.id)
+   }
   const deleteItem = async (id, name) => {
     // eslint-disable-next-line no-restricted-globals
     if (confirm(`Delete is "${name}" item ?`)) {
-      await deleteDoc(doc(db, "dataCols", id))
+      await deleteDoc(doc(db, "dataItems", id))
         .then((res) => toast.success("delete success !"))
         .catch((err) => toast.error(err))
         .finally(() => {
@@ -21,10 +29,9 @@ function Collection(props) {
         });
     }
   };
-  const collecView = (id, name) => {
-    setActiveWin({ ...activeWin, ActionWin: true });
-    setOpenItemId({ id, name });
-    fetchPostItems(id);
+  const OpenItemView = (item) => {
+    setActiveWin({...activeWin, EditItem: true});
+    setItemId(item);
   };
   const clearCollection = () => {
     if (dataCols.length === 0) return;
@@ -35,59 +42,63 @@ function Collection(props) {
         deleteItem(dataCols[i].id, dataCols[i].name);
       }
     }
-  };
-
-  const fetchPostItems = async (id) => {
-    await getDocs(collection(db, "dataItems"))
-      .then((querySnapshot) => {
-        const newData = querySnapshot.docs.map((doc) => ({
-          ...doc.data(),
-          id: doc.id,
-        }));
-        const data = [];
-        newData.forEach((element) => {
-          if (element.dataColsId._key.path.segments[6] === id)
-            data.push(element);
-        });
-        setDataItems(data);
-      })
-      .catch((err) => console.log(err));
-  };
+  }
   return (
     <>
+      <AddItemWin
+        setActiveWin={setActiveWin}
+        activeWin={activeWin}
+        fetchPost={fetchPost} 
+        userData={userData}
+      />
+      <EditItem
+        setActiveWin={setActiveWin}
+        activeWin={activeWin}
+        itemId={itemId}
+        setItemId={setItemId}
+        fetchPost={fetchPost}
+      />
       <ul className="selectType row">
-        {/* edit li to input radio */}
-        <li className="active">All</li>
-        <li>link</li>
-        <li>file</li>
-        <li>text</li>
+        <li className="active">
+          <input type="radio" name="filterType" id="all" checked={check} onChange={checkedHandler} />
+          <label htmlFor="all">All</label>
+        </li>
+        <li>
+          <input type="radio" name="filterType" id="link" onChange={checkedHandler} />
+          <label htmlFor="link">link</label>
+        </li>
+        <li>
+          <input type="radio" name="filterType" id="file" onChange={checkedHandler} />
+          <label htmlFor="file">file</label>
+        </li>
+        <li>
+          <input type="radio" name="filterType" id="text" onChange={checkedHandler} />
+          <label htmlFor="text">text</label>
+        </li>
       </ul>
       <ul className="list column">
         {dataLoad && <ItemLoad/>}
         {dataLoad || dataCols.length > 0 ? (
-          dataCols.map((item) => (
+          dataCols.filter((item)=>{
+            if(filter==='all') return true;
+            return item.dataType.type===filter
+          }).map((item) => (
             <li className="row between" key={item.id}>
               <div
                 className="column"
-                onClick={() => collecView(item.id, item.name)}
+                onClick={() => OpenItemView(item)}
               >
                 <span className="itemName">
                   {item?.name?.length > 30
                     ? item.name.slice(0, 20) + "..."
                     : item.name}
                 </span>
-                {/* <p className="createDate">{item.createDate}</p> */}
               </div>
               <div className="actionBtn">
-                <span>count: {item.count} </span>
-                {/* <button>add</button> */}
-                {/* <button>edit</button> */}
                 <button
                   className="btn-danger"
                   onClick={() => deleteItem(item.id, item.name)}
-                >
-                  delet
-                </button>
+                >delet</button>
               </div>
             </li>
           ))
@@ -97,19 +108,16 @@ function Collection(props) {
       </ul>
       <div className="colAction">
         <div className="row between">
-          <span>Count: {dataCols.length}</span>
+          <span>Count: {
+          dataCols.filter((item)=>{
+            if(filter==='all') return true;
+            return item.dataType.type===filter
+          }).length}</span>
           <button className="actionBtn btn-dange" onClick={clearCollection}>
             Clear all
           </button>
         </div>
       </div>
-      <ActionWin
-        activeWin={activeWin}
-        setActiveWin={setActiveWin}
-        openItemId={openItemId}
-        dataItems={dataItems}
-        setDataItems={setDataItems}
-      />
     </>
   );
 }

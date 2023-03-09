@@ -25,7 +25,6 @@ function App() {
             <Route path='/output' element={<Output/>}/>
             <Route path='/login' element={<Login setAuthToken={setAuthToken}/>}/>
             <Route path='/regis' element={<Regis setAuthToken={setAuthToken}/>}/>
-            {/* <Route path='/animate' element={<Loading/>}/> */}
           </Routes>
         </BrowserRouter>
       </Suspense>
@@ -37,7 +36,7 @@ const Main = ()=>{
   return(
     <>
       <div className="App">
-        <ul class="row between">
+        <ul className="row between">
           <li><Link to="/output">get</Link></li>
           <li><Link to="/input">set</Link></li>
         </ul>

@@ -81,13 +81,16 @@
     padding: 10px 5px;
 }
 
-.selectType li {
+.selectType li label{
     margin: 0 5px;
     cursor: pointer;
     padding: 10px;
     /* border-radius: 10px; */
 }
-.selectType li.active {
+.selectType li input {
+    display: none;
+}
+.selectType li input:checked + label {
     background-color: rgb(167, 167, 194);
     border-bottom: 1px solid #000;
 }
@@ -240,8 +243,8 @@
 }
 
 .addItemWin {
-    display: none;
-    width: 50%;
+    /* display: none; */
+    width: 70%;
     height: max-content;
     padding: 20px;
     border-radius: 10px;
@@ -251,6 +254,11 @@
     left: 50%;
     transform: translateX(-50%);
     background-color: #fff;
+    z-index: 5;
+}
+.addItemWin .headerName{
+    margin: 0 0 10px 0;
+    text-align: center;
 }
 .addItemWin label[for="toCollection"] select{
     width: 100%;
@@ -273,12 +281,12 @@
     margin-left: 5px;
 }
 .addItemWin .itemType {
-    width: 100%;
+    width: max-content;
     height: max-content;
-    padding: 10px;
+    padding: 3px 10px;
     border-radius: 10px;
     border: 1px solid #000;
-    margin-left: 0 auto;
+    margin-left: 10px;
 }
 .addItemWin ul.itemBody {
     width: 100%;
@@ -307,15 +315,41 @@
     border: 0px solid #000;
     padding: 10px;
     box-shadow: 0 0 4px 0;
-    font-size: 18px;
     font-family: sans-serif;
     margin-top: 5px;
 }
-.itemBody .typeLink, 
+/* .itemBody .typeLink, 
 .itemBody .typeText {
     display: none;
-} 
+}  
+*/
+.itemBody .coptbtn {
+    width: max-content;
+    height: max-content;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 3px 0;
+    margin: 5px 0;
+}
 
+.itemBody li input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 3px 0;
+    margin: 4px 0px;
+}
+.itemBody li input[type='submit'] {
+    background-color: #ccc;
+    border-radius: 15px;
+    color: #000;
+    font-size: 15px;
+}
+.itemBody li label {
+    margin: 10px 0 5px 0;
+}
 .itemView {
     /* display: none; */
     width: 50%;
@@ -428,7 +462,7 @@ label[for="TextView"] {
    border: 0px;
    box-shadow: 0 0 4px 0; 
 }
-.viewKey .cancel{
+.cancel{
     padding: 10px 15px;
     border-radius: 10px;
     border: none;
@@ -447,6 +481,39 @@ button.btn-danger {
     background-color: #f00;
     color: #fff;
 }
-button {
+button, .btn{
     cursor: pointer;
 }
+
+.viewItems {
+    width: 90%;
+    height: max-content;
+    border-radius: 10px;
+    box-shadow: 0 0 3px 0;
+    position: absolute;
+    z-index: 10;
+    background: #fff;
+    padding: 20px;
+}
+.viewItems input, .viewItems textarea {
+    width: 100%;
+    height: max-content;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 18px;
+    margin-top: 5px;
+}
+.viewItems label {
+    font-size: 18px;
+    margin-top: 5px;
+}
+.copyBtn {
+    width: max-content;
+    height: max-content;
+    padding: 4px;
+    margin: 5px;
+    border: none;
+    box-shadow: 0 0 3px 0;
+    border-radius: 5px;
+}
+
