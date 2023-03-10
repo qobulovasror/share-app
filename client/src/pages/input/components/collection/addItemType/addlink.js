@@ -34,7 +34,6 @@ function AddLink(props) {
       toast.success("Success 😄");
     } catch (err) {
       toast.error(err + " 🙁");
-      console.log(err);
     }
   };
   return (
