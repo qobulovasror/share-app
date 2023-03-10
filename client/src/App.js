@@ -44,7 +44,7 @@ const Main = ()=>{
         </ul>
       </div>
     </>
-  )
+  ) 
 }
 
 export default App;
