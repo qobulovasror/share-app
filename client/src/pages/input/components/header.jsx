@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { onAuthStateChanged, signOut } from "firebase/auth";
+import { signOut } from "firebase/auth";
 import { auth } from "../../../firebase/firebase";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -9,24 +8,6 @@ import "react-toastify/dist/ReactToastify.css";
 
 function Header({ setAuthToken, setUserData, userData }) {
   const navigate = useNavigate();
-  
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setUserData(user);
-        // toast.success("login succeeded 😊");
-      } else {
-        logout()
-      }
-    });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const handleLogout = () => {
-    // eslint-disable-next-line no-restricted-globals
-    if(confirm("Are you want log out? 🤨"))
-      logout()
-  };
   const logout = () => {
     signOut(auth)
       .then(() => {
@@ -38,7 +19,11 @@ function Header({ setAuthToken, setUserData, userData }) {
         toast.error(error + "🙁");
       });
   };
-  
+  const handleLogout = () => {
+    // eslint-disable-next-line no-restricted-globals
+    if(confirm("Are you want log out? 🤨"))
+      logout()
+  };
   return (
     <>
       <ToastContainer />
@@ -49,7 +34,7 @@ function Header({ setAuthToken, setUserData, userData }) {
               <i className="bx bxs-share-alt">Share</i>
             </Link>
             <div className="profil">
-              {userData.email}
+              {userData}
               <button onClick={handleLogout}>
                 log out
               </button>

@@ -19,7 +19,7 @@ function Advancet({ advan, setAdvan, setSearch, search, request }) {
         setAdvan('none')
     }
     const userNameHandler = (e)=>{
-        setSearch({...search, username: e.target.value})
+        setSearch({...search, userEmail: e.target.value})
     }
     const submitHandler = (e)=>{
         e.preventDefault();
@@ -35,13 +35,13 @@ function Advancet({ advan, setAdvan, setSearch, search, request }) {
           <div className="cancel btn" onClick={advanDisplay}>x</div>
         </div>
         <div className="column">
-          <label htmlFor="username" className="column">
-            Username
+          <label htmlFor="userEmail" className="column">
+            User email
             <input 
                 type="text" 
                 name="username" 
                 id="username" 
-                placeholder="username" 
+                placeholder="user email" 
                 onChange={userNameHandler}
             />
           </label>

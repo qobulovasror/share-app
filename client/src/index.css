@@ -82,3 +82,10 @@ ul {
 .wrap {
   flex-wrap: wrap;
 }
+
+.center {
+  width: max-content;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}

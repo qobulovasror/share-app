@@ -7,7 +7,7 @@ import { filterEmail } from '../../config/regxes';
 
 import 'react-toastify/dist/ReactToastify.css';
 import './assets/style.css';
-function Regis({setAuthToken}) {
+function Regis({setAuthToken, setEmail}) {
     const navigate = useNavigate();
     const [user, setUser] = useState({ email:"", password: "", repass:""});
     const setInput = (e)=>{
@@ -38,6 +38,7 @@ function Regis({setAuthToken}) {
                 toast.success("sign up success 😊")
                 setAuthToken(user.uid)
                 window.localStorage.setItem('authToken', user.uid)
+                setEmail(user.email)
                 navigate("/input")
             })
             .catch((error) => {
@@ -72,9 +73,9 @@ function Regis({setAuthToken}) {
                         <input type="password" id="repass" name='repass' placeholder='repass' onChange={setInput} value={user.repass}/>
                     </label>
                     <button>Sign Up</button>
-                    
                 </form>
-                <span>Have you account ? <a href="/login">log in</a></span>
+                <span className='center'>I have not account?  <a href="/regis">Sing up</a></span> <br/>
+                <span className='center'>Main page <a href="/">Main</a></span>
             </div>
         </div>
      );

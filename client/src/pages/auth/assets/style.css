@@ -1,19 +1,21 @@
 .card-login, .card-regs {
     width: 35%;
     height: max-content;
-    position: relative;
-    top: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     margin: 0 auto;
-    margin-top: 50px;
     padding: 15px;
     border-radius: 15px;
     border: 0px solid #000;
     background-color: #eeeeee;
     box-shadow: 0 0 4px 0;
+    padding-bottom: 30px;
 }
 form h2 {
     text-align: center;
-    margin: 10px 0;    
+    margin: 0px 0;    
     font-size: 30px;
 }
 label {
@@ -23,7 +25,7 @@ h3 {
     margin-top: 5px;
     font-size: 20px;
 }
-input, button {
+input, .card-login button, .card-regs button {
     width: 100%;
     height: max-content;
     padding: 10px;
@@ -31,7 +33,7 @@ input, button {
     border: 1px solid #000;
     font-size: 20px;
 }
-button {
+.card-login button, .card-regs button {
     margin: 10px 0;
     background-color: #00f;
     color: #fff;
@@ -46,8 +48,15 @@ span {
         width: 50%;
     }
 }
+@media screen and (max-width: 767px) {
+    .card-login, .card-regs {
+        width: 75%;
+        /* margin-top: 70px; */
+    }
+}
 @media screen and (max-width: 600px) {
     .card-login, .card-regs {
         width: 90%;
+        /* margin-top: 100px; */
     }
 }
