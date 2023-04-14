@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import {  signInWithEmailAndPassword   } from 'firebase/auth';
 import { auth } from '../../firebase/firebase';
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import { filterEmail } from '../../config/regxes';
 
@@ -71,8 +71,8 @@ function Login({setAuthToken, setEmail}) {
                         </label>
                         <button>Sing In</button>
                     </form>
-                    <span className='center'>I have not account?  <a href="/regis">Sing up</a></span> <br/>
-                    <span className='center'>Main page <a href="/">Main</a></span>
+                    <span className='center'>I have not account? <Link to={"/regis"}>Sing up</Link></span> <br/>
+                    <span className='center'>Main page <Link to="/">Main</Link></span>
                 </div>
         </>
      );

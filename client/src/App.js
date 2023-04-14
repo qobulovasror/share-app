@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Suspense, lazy } from 'react';
-import {BrowserRouter, Routes, Route, Link} from 'react-router-dom';
+import {BrowserRouter, Routes, Route, Link, Navigate} from 'react-router-dom';
 
 import './assets/app.css';
 import Loading from './pages/load/loading';
@@ -20,9 +20,12 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path='/' element={<Main/>}/>
-            <Route path='/input' element={
-              (authToken)? <Input setAuthToken={setAuthToken} email={email} setEmail={setEmail}/> 
-              : <Login setAuthToken={setAuthToken} setEmail={setEmail}/>
+            <Route 
+              path='/input' 
+              element={
+              (authToken)? 
+                  <Input setAuthToken={setAuthToken} email={email} setEmail={setEmail}/> 
+                : <Navigate replace to="/login"/>
             }/>
             <Route path='/output' element={<Output/>}/>
             <Route path='/login' element={<Login setAuthToken={setAuthToken}  setEmail={setEmail}/>}/>
